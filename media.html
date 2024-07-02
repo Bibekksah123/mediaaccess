@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="camera">camera</button>
+  <video src="" class="videoicon" autoplay></video>
+  <script>
+    let camera=document.getElementById('camera');
+    let video=document.querySelector('.videoicon');
+    camera.addEventListener("click",()=>{
+      if(navigator.mediaDevices){
+        navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+    .then((stream) => {
+        // Handle the stream (e.g., display it in a video element)
+      video.srcobject=stream;
+    })
+    .catch((error) => {
+        console.error('Error accessing camera:', error);
+    });
+
+
+      }
+    })
+  </script>
+</body>
+</html>
